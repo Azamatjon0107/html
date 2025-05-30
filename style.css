@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 175%; /* Dummy textdan 75% katta (16px -> 28px) */
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    background-color: #d3d3d3; /* Bo‘limlar uchun kulrang fon */
+    border: 1px solid black;
+    margin: 15px;
+    padding: 40px 10px 10px 10px; /* Sarlavha bilan o‘zlashtirmaslik uchun yuqori padding */
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid black;
+    padding: 5px 20px;
+    font-size: 125%; /* Dummy textdan 25% katta (16px -> 20px) */
+}
+
+.section-text {
+    text-align: justify;
+}
+
+.chicken-title {
+    background-color: #ff9999; /* Chicken sarlavhasi uchun och pushti */
+}
+
+.beef-title {
+    background-color: #ff3333; /* Beef sarlavhasi uchun qizil */
+    color: white;
+}
+
+.sushi-title {
+    background-color: #ffff99; /* Sushi sarlavhasi uchun sariq */
+}
+
+/* Desktop ko‘rinishi (≥ 992px) */
+@media (min-width: 992px) {
+    .section {
+        width: calc(33.33% - 30px); /* Marginlarni hisobga olgan holda */
+        float: left;
+    }
+}
+
+/* Tablet ko‘rinishi (768px dan 991px gacha) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        width: calc(50% - 30px);
+        float: left;
+    }
+    .section:nth-child(3) {
+        width: calc(100% - 30px);
+        clear: both;
+    }
+}
+
+/* Mobil ko‘rinishi (≤ 767px) */
+@media (max-width: 767px) {
+    .section {
+        width: calc(100% - 30px);
+        float: none;
+    }
+}
